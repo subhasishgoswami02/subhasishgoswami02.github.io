@@ -7,136 +7,229 @@
 <meta name="description" content="Subhasish Goswami, Senior Manager, Product. 14 years across fintech lending, credit decisioning, and AI products. Roughly $550M disbursed across 25,000+ funded loans.">
 <style>
 :root {
-  --ink: #1a2233;
-  --muted: #5a6577;
-  --line: #e4e8ef;
-  --bg: #fafbfd;
+  --ink: #1c2434;
+  --body: #333e52;
+  --muted: #4e5a70;
+  --line: #e3e8f0;
+  --bg: #f7f9fc;
   --panel: #ffffff;
-  --accent: #2456d6;
-  --accent-soft: #eaf0fd;
+  --accent: #1e4fd0;
+  --accent-dark: #173fa8;
+  --accent-soft: #e8eefc;
+  --gold: #b7791f;
 }
 * { box-sizing: border-box; margin: 0; }
-body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; }
-.wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
-header { padding: 72px 0 48px; }
-.kicker { color: var(--accent); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 10px; }
-h1 { font-size: 40px; line-height: 1.15; letter-spacing: -0.5px; }
-.lede { font-size: 18px; color: var(--muted); margin-top: 16px; max-width: 640px; }
-.links { margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap; }
-.btn { display: inline-block; padding: 10px 18px; border-radius: 8px; font-size: 14.5px; font-weight: 600; text-decoration: none; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--body); background: var(--bg); line-height: 1.65; }
+.skip { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 0 0 8px 0; z-index: 99; }
+.skip:focus { left: 0; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+.topnav { position: sticky; top: 0; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 10; }
+.topnav .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; padding-bottom: 12px; }
+.wordmark { font-weight: 800; color: var(--ink); text-decoration: none; font-size: 16px; letter-spacing: -0.2px; }
+.wordmark span { color: var(--accent); }
+.topnav nav { display: flex; gap: 4px; align-items: center; }
+.topnav nav a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 600; padding: 8px 12px; border-radius: 8px; }
+.topnav nav a:hover { color: var(--ink); background: var(--accent-soft); }
+.topnav nav a.cta { background: var(--accent); color: #fff; margin-left: 6px; }
+.topnav nav a.cta:hover { background: var(--accent-dark); }
+.hero { padding: 64px 0 40px; background: linear-gradient(180deg, #eef3fc 0%, var(--bg) 100%); }
+.hero .wrap { display: grid; grid-template-columns: 1fr 240px; gap: 40px; align-items: center; }
+.kicker { color: var(--accent); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1.4px; margin-bottom: 10px; }
+h1 { font-size: 42px; line-height: 1.12; letter-spacing: -0.8px; color: var(--ink); }
+.lede { font-size: 17.5px; color: var(--muted); margin-top: 16px; max-width: 580px; }
+.lede strong { color: var(--ink); }
+.links { margin-top: 26px; display: flex; gap: 10px; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 11px 18px; border-radius: 9px; font-size: 14.5px; font-weight: 650; text-decoration: none; border: 1px solid transparent; }
 .btn.solid { background: var(--accent); color: #fff; }
-.btn.outline { border: 1px solid var(--line); color: var(--ink); background: var(--panel); }
-.metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 10px 0 8px; }
-.metric { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 16px; }
-.metric b { display: block; font-size: 24px; letter-spacing: -0.3px; }
+.btn.solid:hover { background: var(--accent-dark); }
+.btn.outline { border-color: var(--line); color: var(--ink); background: var(--panel); }
+.btn.outline:hover { border-color: var(--accent); color: var(--accent); }
+.portrait { justify-self: end; }
+.portrait img { width: 224px; height: 224px; border-radius: 50%; object-fit: cover; border: 5px solid #fff; box-shadow: 0 12px 32px rgba(30,79,208,0.18); display: block; }
+.monogram { width: 224px; height: 224px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, #6d8ff0 100%); color: #fff; font-size: 72px; font-weight: 800; align-items: center; justify-content: center; border: 5px solid #fff; box-shadow: 0 12px 32px rgba(30,79,208,0.18); letter-spacing: 1px; }
+@media (max-width: 760px) { .monogram { width: 130px; height: 130px; font-size: 44px; } }
+.metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 18px 0 8px; }
+.metric { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 16px; border-top: 3px solid var(--accent); }
+.metric b { display: block; font-size: 26px; letter-spacing: -0.4px; color: var(--ink); }
 .metric span { font-size: 13px; color: var(--muted); }
-section { padding: 44px 0 8px; }
-h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 22px; }
-.case { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
-.case h3 { font-size: 19px; margin-bottom: 8px; }
+section { padding: 48px 0 8px; }
+.sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 24px; }
+h2 { font-size: 22px; color: var(--ink); letter-spacing: -0.3px; white-space: nowrap; }
+.sec-head::after { content: ""; height: 1px; background: var(--line); flex: 1; }
+.case { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 26px 28px; margin-bottom: 18px; display: grid; grid-template-columns: 44px 1fr; gap: 18px; transition: box-shadow 0.2s, transform 0.2s; }
+.case:hover { box-shadow: 0 10px 28px rgba(28,36,52,0.08); transform: translateY(-2px); }
+.case-num { font-size: 22px; font-weight: 800; color: var(--accent); opacity: 0.35; line-height: 1; padding-top: 4px; }
+.case h3 { font-size: 19px; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.2px; }
 .case p { color: var(--muted); font-size: 15px; }
-.case .result { margin-top: 12px; font-size: 14.5px; color: var(--ink); }
-.case .result b { color: var(--accent); }
-.tag { display: inline-block; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; }
+.case .result { margin-top: 12px; font-size: 14.5px; color: var(--body); background: var(--accent-soft); border-radius: 8px; padding: 10px 14px; }
+.case .result b { color: var(--accent-dark); }
+.case .result a { color: var(--accent-dark); font-weight: 650; }
+.tag { display: inline-block; background: var(--accent-soft); color: var(--accent-dark); font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; letter-spacing: 0.3px; }
 .builds { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.build { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
-.build h3 { font-size: 16px; margin-bottom: 6px; }
-.build p { font-size: 14px; color: var(--muted); }
-.build a { color: var(--accent); font-size: 14px; font-weight: 600; text-decoration: none; }
-footer { padding: 48px 0 64px; color: var(--muted); font-size: 14px; }
-footer a { color: var(--accent); text-decoration: none; }
-@media (max-width: 720px) {
+.build { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; transition: box-shadow 0.2s, transform 0.2s; }
+.build:hover { box-shadow: 0 10px 28px rgba(28,36,52,0.08); transform: translateY(-2px); }
+.build h3 { font-size: 16px; color: var(--ink); margin-bottom: 6px; }
+.build p { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+.build a { color: var(--accent); font-size: 14px; font-weight: 650; text-decoration: none; }
+.build a:hover { text-decoration: underline; }
+.live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #2fbf71; margin-right: 6px; }
+.about { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 26px 28px; font-size: 15.5px; color: var(--muted); }
+.about strong { color: var(--ink); }
+footer { padding: 44px 0 60px; color: var(--muted); font-size: 14.5px; }
+footer .card { background: var(--ink); color: #dfe5ef; border-radius: 16px; padding: 34px; text-align: center; }
+footer .card h2 { color: #fff; margin-bottom: 8px; }
+footer .card p { margin-bottom: 18px; color: #b8c2d4; }
+footer .card a.btn { background: #fff; color: var(--ink); }
+footer .card a.btn:hover { background: var(--accent-soft); }
+footer .fine { text-align: center; margin-top: 22px; font-size: 13.5px; }
+footer .fine a { color: var(--accent); text-decoration: none; }
+@media (max-width: 760px) {
   h1 { font-size: 30px; }
+  .hero .wrap { grid-template-columns: 1fr; }
+  .portrait { justify-self: start; order: -1; }
+  .portrait img { width: 130px; height: 130px; }
   .metrics { grid-template-columns: repeat(2, 1fr); }
   .builds { grid-template-columns: 1fr; }
+  .case { grid-template-columns: 1fr; }
+  .case-num { display: none; }
+  .topnav nav a:not(.cta) { display: none; }
 }
 </style>
 </head>
 <body>
-<div class="wrap">
-
-<header>
-  <div class="kicker">Senior Manager, Product</div>
-  <h1>Subhasish Goswami</h1>
-  <p class="lede">I build lending and AI products. Over 6.5 years at MPOWER Financing I helped scale cross-border student lending from roughly $35M to roughly $350M in annual originations, moved credit decisioning from a 48-hour manual queue to under 10 seconds, and shipped an AI assistant that served 47,311 users in 2025.</p>
-  <div class="links">
-    <a class="btn solid" href="mailto:subhasish.gossa@gmail.com">Get in touch</a>
-    <a class="btn outline" href="https://www.linkedin.com/in/subhasishgoswami/">LinkedIn</a>
-    <a class="btn outline" href="https://github.com/subhasishgoswami02">GitHub</a>
-    <a class="btn outline" href="Subhasish_Goswami_Resume.pdf">Resume</a>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="topnav">
+  <div class="wrap">
+    <a class="wordmark" href="#top">Subhasish<span>Goswami</span></a>
+    <nav aria-label="Site">
+      <a href="#work">Work</a>
+      <a href="#builds">Builds</a>
+      <a href="#about">About</a>
+      <a class="cta" href="Subhasish_Goswami_Resume.pdf">Resume (PDF)</a>
+    </nav>
   </div>
 </header>
 
-<div class="metrics">
-  <div class="metric"><b>~$550M</b><span>cumulative disbursed</span></div>
-  <div class="metric"><b>25,000+</b><span>funded loans</span></div>
-  <div class="metric"><b>~10x</b><span>origination growth, 2021 to 2025</span></div>
-  <div class="metric"><b>87</b><span>epics owned, 60+ shipped</span></div>
+<main id="main">
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Senior Manager, Product</p>
+      <h1>Subhasish Goswami</h1>
+      <p class="lede">I build lending and AI products. Over 6.5 years at MPOWER Financing I helped scale cross-border student lending from roughly $35M to roughly <strong>$350M in annual originations</strong>, moved credit decisioning from a 48-hour manual queue to <strong>under 10 seconds</strong>, and shipped an AI assistant that served <strong>47,311 users</strong> in 2025.</p>
+      <div class="links">
+        <a class="btn solid" href="mailto:subhasishgoswami02@gmail.com">Email me</a>
+        <a class="btn outline" href="https://www.linkedin.com/in/subhasishgoswami/">LinkedIn</a>
+        <a class="btn outline" href="https://github.com/subhasishgoswami02">GitHub</a>
+        <a class="btn outline" href="https://decision-studio-one.vercel.app">Try my live demo</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="photo.jpg" alt="Portrait of Subhasish Goswami" width="224" height="224" onerror="this.style.display='none';document.getElementById('mono').style.display='flex'">
+      <div id="mono" class="monogram" aria-hidden="true" style="display:none">SG</div>
+    </div>
+  </div>
 </div>
 
-<section>
-  <h2>Selected work</h2>
-
-  <div class="case">
-    <span class="tag">Credit decisioning</span>
-    <h3>From a 48-hour queue to a sub-10-second decision</h3>
-    <p>Loan decisions ran through a manual underwriting queue. I led the move to an automated decisioning platform built on configurable primitives: eligibility rules, pricing tiers, partner routing, and rollback, each adjustable without a code change.</p>
-    <p class="result">Result: decisions in <b>under 10 seconds</b>, <b>3x throughput</b> with no added headcount. I rebuilt the core mechanics as a public demo: <a href="https://decision-studio-subhasishgoswami02s-projects.vercel.app" style="color:var(--accent)">Decision Studio</a>.</p>
+<div class="wrap">
+  <div class="metrics" role="list" aria-label="Career metrics">
+    <div class="metric" role="listitem"><b>~$550M</b><span>cumulative disbursed</span></div>
+    <div class="metric" role="listitem"><b>25,000+</b><span>funded loans</span></div>
+    <div class="metric" role="listitem"><b>~10x</b><span>origination growth, 2021 to 2025</span></div>
+    <div class="metric" role="listitem"><b>87</b><span>epics owned, 60+ shipped</span></div>
   </div>
 
-  <div class="case">
-    <span class="tag">AI product</span>
-    <h3>An AI assistant that handled support end to end</h3>
-    <p>I owned product strategy and requirements for Mira, a RAG-based borrower assistant: grounding and guardrail requirements, the knowledge base, evaluation metrics for containment and hallucination, and pre-launch red teaming of grounding failures.</p>
-    <p class="result">Result: <b>98% containment</b>, with <b>47,311 users</b> served in 2025 without human intervention.</p>
-  </div>
+  <section id="work" aria-labelledby="work-h">
+    <div class="sec-head"><h2 id="work-h">Selected work</h2></div>
 
-  <div class="case">
-    <span class="tag">Credit data strategy</span>
-    <h3>Cut bureau spend while extending coverage to 190+ countries</h3>
-    <p>Analyzed $1.41M in annual credit bureau spend across 151K pulls, found 40% avoidable, and put a sign-off process in place. In parallel, extended credit data coverage from 18 to 190+ countries through customer-supplied credit data, starting with a 9-country pilot.</p>
-    <p class="result">Result: <b>$275K per year</b> in credit pull cost reduction, roughly $350K per year in total data and vendor cost reductions.</p>
-  </div>
+    <article class="case">
+      <div class="case-num" aria-hidden="true">01</div>
+      <div>
+        <span class="tag">Credit decisioning</span>
+        <h3>From a 48-hour queue to a sub-10-second decision</h3>
+        <p>Loan decisions ran through a manual underwriting queue. I led the move to an automated decisioning platform built on configurable primitives: eligibility rules, pricing tiers, partner routing, and rollback, each adjustable without a code change.</p>
+        <p class="result">Result: decisions in <b>under 10 seconds</b>, <b>3x throughput</b> with no added headcount. I rebuilt the core mechanics as a public demo: <a href="https://decision-studio-one.vercel.app">Decision Studio</a>.</p>
+      </div>
+    </article>
 
-  <div class="case">
-    <span class="tag">Conversion</span>
-    <h3>Rebuilding the application funnel</h3>
-    <p>Redesigned the loan application flow around progressive disclosure and smarter defaults, with instrumentation at every step.</p>
-    <p class="result">Result: drop-off cut from <b>16% to 4%</b>, completion up from <b>70% to 82%</b>, conditional-offer rate up from <b>59% to 76%</b>.</p>
-  </div>
-</section>
+    <article class="case">
+      <div class="case-num" aria-hidden="true">02</div>
+      <div>
+        <span class="tag">AI product</span>
+        <h3>An AI assistant that handled support end to end</h3>
+        <p>I owned product strategy and requirements for Mira, a RAG-based borrower assistant: grounding and guardrail requirements, the knowledge base, evaluation metrics for containment and hallucination, and pre-launch red teaming of grounding failures.</p>
+        <p class="result">Result: <b>98% containment</b>, with <b>47,311 users</b> served in 2025 without human intervention.</p>
+      </div>
+    </article>
 
-<section>
-  <h2>Things I build with AI</h2>
-  <div class="builds">
-    <div class="build">
-      <h3>Decision Studio</h3>
-      <p>A working loan decisioning engine with a rules console, pricing tiers, and a full decision trace. Next.js, deployed on Vercel.</p>
-      <a href="https://decision-studio-subhasishgoswami02s-projects.vercel.app">Live demo</a>
+    <article class="case">
+      <div class="case-num" aria-hidden="true">03</div>
+      <div>
+        <span class="tag">Credit data strategy</span>
+        <h3>Cut bureau spend while extending coverage to 190+ countries</h3>
+        <p>Analyzed $1.41M in annual credit bureau spend across 151K pulls, found 40% avoidable, and put a sign-off process in place. In parallel, extended credit data coverage from 18 to 190+ countries through customer-supplied credit data, starting with a 9-country pilot.</p>
+        <p class="result">Result: <b>$275K per year</b> in credit pull cost reduction, roughly $350K per year in total data and vendor cost reductions.</p>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-num" aria-hidden="true">04</div>
+      <div>
+        <span class="tag">Conversion</span>
+        <h3>Rebuilding the application funnel</h3>
+        <p>Redesigned the loan application flow around progressive disclosure and smarter defaults, with instrumentation at every step.</p>
+        <p class="result">Result: drop-off cut from <b>16% to 4%</b>, completion up from <b>70% to 82%</b>, conditional-offer rate up from <b>59% to 76%</b>.</p>
+      </div>
+    </article>
+  </section>
+
+  <section id="builds" aria-labelledby="builds-h">
+    <div class="sec-head"><h2 id="builds-h">Things I build with AI</h2></div>
+    <div class="builds">
+      <div class="build">
+        <h3><span class="live-dot" aria-hidden="true"></span>Decision Studio</h3>
+        <p>A working loan decisioning engine with a rules console, pricing tiers, and a full decision trace. Next.js, deployed on Vercel.</p>
+        <a href="https://decision-studio-one.vercel.app">Try the live demo</a>
+      </div>
+      <div class="build">
+        <h3>CareerOS</h3>
+        <p>A personal job search operating system: resume variants, evidence-checked claims, and automated QA pipelines.</p>
+        <a href="https://github.com/subhasishgoswami02/careeros">View on GitHub</a>
+      </div>
+      <div class="build">
+        <h3>RAG evaluation harness</h3>
+        <p>A test harness for grounded AI answers: containment, resolution accuracy, and hallucination checks.</p>
+        <a href="https://github.com/subhasishgoswami02/rag-eval-harness">View on GitHub</a>
+      </div>
+      <div class="build">
+        <h3>Multi-agent document reviewer</h3>
+        <p>Line-by-line PRD and spec review from multiple stakeholder personas, built on Claude.</p>
+        <a href="https://github.com/subhasishgoswami02">View on GitHub</a>
+      </div>
     </div>
-    <div class="build">
-      <h3>CareerOS</h3>
-      <p>A personal job search operating system: resume variants, evidence-checked claims, and automated QA pipelines.</p>
-      <a href="https://github.com/subhasishgoswami02/careeros">On GitHub</a>
+  </section>
+
+  <section id="about" aria-labelledby="about-h">
+    <div class="sec-head"><h2 id="about-h">About me</h2></div>
+    <div class="about">
+      <p><strong>Based in Bengaluru.</strong> 14 years across product, lending, and analytics: MPOWER Financing since 2019 (employee #20 in India, four promotions), earlier TietoEVRY, Cognizant, and Wipro. MBA from Great Lakes Institute of Management. Evenings usually find me building with AI: the tools on this page started as weekend prototypes. I like products where a config change beats a code deploy, and metrics you can defend in a reference check.</p>
     </div>
-    <div class="build">
-      <h3>RAG evaluation harness</h3>
-      <p>A test harness for grounded AI answers: containment, resolution accuracy, and hallucination checks.</p>
-      <a href="https://github.com/subhasishgoswami02/rag-eval-harness">On GitHub</a>
-    </div>
-    <div class="build">
-      <h3>Multi-agent document reviewer</h3>
-      <p>Line-by-line PRD and spec review from multiple stakeholder personas, built on Claude.</p>
-      <a href="https://github.com/subhasishgoswami02">On GitHub</a>
-    </div>
-  </div>
-</section>
+  </section>
+</div>
 
 <footer>
-  <p>Based in Bengaluru. 14 years across product, lending, and analytics. Previously TietoEVRY, Cognizant, and Wipro; MBA from Great Lakes Institute of Management.</p>
-  <p style="margin-top:8px"><a href="mailto:subhasish.gossa@gmail.com">subhasish.gossa@gmail.com</a></p>
+  <div class="wrap">
+    <div class="card">
+      <h2>Building a lending or AI product?</h2>
+      <p>I am open to Senior PM, Lead PM, Group PM, and product leadership conversations.</p>
+      <a class="btn solid" href="mailto:subhasishgoswami02@gmail.com">Email me</a>
+    </div>
+    <p class="fine"><a href="mailto:subhasishgoswami02@gmail.com">subhasishgoswami02@gmail.com</a> · <a href="https://www.linkedin.com/in/subhasishgoswami/">LinkedIn</a> · <a href="https://github.com/subhasishgoswami02">GitHub</a></p>
+  </div>
 </footer>
-
-</div>
+</main>
 </body>
 </html>
