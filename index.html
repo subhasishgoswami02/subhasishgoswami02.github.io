@@ -10,6 +10,28 @@
 <meta property="og:image" content="https://subhasishgoswami02.github.io/thumb.png?v=3">
 <meta property="og:url" content="https://subhasishgoswami02.github.io/">
 <meta property="og:type" content="website">
+<link rel="canonical" href="https://subhasishgoswami02.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Subhasish Goswami | Product Leader, Fintech Lending and AI">
+<meta name="twitter:description" content="Case studies, live builds, and metrics that survive a reference check. ~$550M disbursed, ~10x growth, sub-10-second decisioning, 98% AI containment.">
+<meta name="twitter:image" content="https://subhasishgoswami02.github.io/thumb.png?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Subhasish Goswami",
+  "url": "https://subhasishgoswami02.github.io/",
+  "image": "https://subhasishgoswami02.github.io/photo.jpg",
+  "jobTitle": "Senior Manager, Product",
+  "worksFor": { "@type": "Organization", "name": "MPOWER Financing" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Great Lakes Institute of Management" },
+  "description": "Product leader across fintech lending, credit decisioning, and AI products. Roughly $550M disbursed, sub-10-second decisioning, 98% AI containment.",
+  "sameAs": [
+    "https://www.linkedin.com/in/subhasishgoswami/",
+    "https://github.com/subhasishgoswami02"
+  ]
+}
+</script>
 <style>
 :root {
   --ink: #1c2434;
@@ -72,6 +94,12 @@ h2 { font-size: 22px; color: var(--ink); letter-spacing: -0.3px; white-space: no
 .case .result { margin-top: 12px; font-size: 14.5px; color: var(--body); background: var(--accent-soft); border-radius: 8px; padding: 10px 14px; }
 .case .result b { color: var(--accent-dark); }
 .case .result a { color: var(--accent-dark); font-weight: 650; }
+.case .scope { margin-top: 10px; font-size: 13px; color: var(--muted); }
+.case .scope b { color: var(--ink); font-weight: 650; }
+.artifact { margin-top: 14px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+.artifact svg { display: block; width: 100%; height: auto; }
+.artifact figcaption { margin-top: 8px; font-size: 12.5px; color: var(--muted); }
+.build-note { display: inline-block; font-size: 14px; color: var(--muted); font-style: italic; }
 .tag { display: inline-block; background: var(--accent-soft); color: var(--accent-dark); font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; letter-spacing: 0.3px; }
 .builds { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .build { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; transition: box-shadow 0.2s, transform 0.2s; }
@@ -83,14 +111,21 @@ h2 { font-size: 22px; color: var(--ink); letter-spacing: -0.3px; white-space: no
 .live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #2fbf71; margin-right: 6px; }
 .about { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 26px 28px; font-size: 15.5px; color: var(--muted); }
 .about strong { color: var(--ink); }
-.recs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.rec { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 24px 22px; display: flex; flex-direction: column; gap: 16px; transition: box-shadow 0.2s, transform 0.2s; }
+.recs { display: flex; flex-direction: column; gap: 16px; }
+.recs-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.rec { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 26px 26px 22px; display: flex; flex-direction: column; gap: 14px; transition: box-shadow 0.2s, transform 0.2s; }
 .rec:hover { box-shadow: 0 10px 28px rgba(28,36,52,0.08); transform: translateY(-2px); }
 .rec blockquote { margin: 0; font-size: 14.5px; color: var(--body); }
-.rec figcaption { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); }
-.rec figcaption a { color: var(--ink); font-weight: 700; font-size: 14.5px; text-decoration: none; }
-.rec figcaption a:hover { color: var(--accent); }
-.rec figcaption span { display: block; color: var(--muted); font-size: 12.5px; margin-top: 3px; }
+.rec blockquote::before { content: "\201C"; display: block; font-family: Georgia, "Times New Roman", serif; font-size: 46px; font-weight: 700; line-height: 1; color: var(--accent-soft); margin-bottom: -6px; }
+.rec-featured blockquote::before { font-size: 56px; }
+.rec blockquote p + p { margin-top: 10px; }
+.rec-featured blockquote { font-size: 16px; }
+.rec figcaption { display: flex; align-items: flex-start; gap: 12px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); }
+.rec-avatar { flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, #6d8ff0 100%); color: #fff; font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; letter-spacing: 0.3px; }
+.rec-meta a { color: var(--ink); font-weight: 700; font-size: 14.5px; text-decoration: none; }
+.rec-meta a:hover { color: var(--accent); }
+.rec-meta .rec-role { display: block; color: var(--accent-dark); font-size: 12.5px; font-weight: 650; margin-top: 2px; }
+.rec-meta .rec-meta-line { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
 footer { padding: 44px 0 60px; color: var(--muted); font-size: 14.5px; }
 footer .card { background: var(--ink); color: #dfe5ef; border-radius: 16px; padding: 34px; text-align: center; }
 footer .card h2 { color: #fff; margin-bottom: 8px; }
@@ -102,11 +137,11 @@ footer .fine a { color: var(--accent); text-decoration: none; }
 @media (max-width: 760px) {
   h1 { font-size: 30px; }
   .hero .wrap { grid-template-columns: 1fr; }
-  .portrait { justify-self: start; order: -1; }
+  .portrait { justify-self: start; }
   .portrait img { width: 130px; height: 130px; }
   .metrics { grid-template-columns: repeat(2, 1fr); }
   .builds { grid-template-columns: 1fr; }
-  .recs { grid-template-columns: 1fr; }
+  .recs-row { grid-template-columns: 1fr; }
   .case { grid-template-columns: 1fr; }
   .case-num { display: none; }
   .topnav nav a:not(.cta) { display: none; }
@@ -167,6 +202,36 @@ footer .fine a { color: var(--accent); text-decoration: none; }
         <h3>From a 48-hour queue to a sub-10-second decision</h3>
         <p>Loan decisions ran through a manual underwriting queue. I led the move to an automated decisioning platform built on configurable primitives: eligibility rules, pricing tiers, partner routing, and rollback, each adjustable without a code change.</p>
         <p class="result">Result: decisions in <b>under 10 seconds</b>, <b>3x throughput</b> with no added headcount. I rebuilt the core mechanics as a public demo: <a href="https://decision-studio-one.vercel.app">Decision Studio</a>.</p>
+        <p class="scope"><b>Scope:</b> product owner for the decisioning platform, requirements and config logic; execution by MPOWER's in-house engineering team.</p>
+        <figure class="artifact">
+          <svg viewBox="0 0 880 100" role="img" aria-label="Flow diagram: Application, eligibility rules, scorecard, pricing tier, then a decision in under 10 seconds">
+            <g font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="650">
+              <rect x="10" y="22" width="156" height="56" rx="8" fill="#e8eefc" stroke="#e3e8f0"/>
+              <text x="88" y="55" text-anchor="middle" fill="#173fa8">Application</text>
+              <line x1="166" y1="50" x2="186" y2="50" stroke="#4e5a70" stroke-width="1.5" marker-end="url(#arrow)"/>
+              <rect x="186" y="22" width="156" height="56" rx="8" fill="#e8eefc" stroke="#e3e8f0"/>
+              <text x="264" y="48" text-anchor="middle" fill="#173fa8">Eligibility</text>
+              <text x="264" y="64" text-anchor="middle" fill="#173fa8">rules</text>
+              <line x1="342" y1="50" x2="362" y2="50" stroke="#4e5a70" stroke-width="1.5" marker-end="url(#arrow)"/>
+              <rect x="362" y="22" width="156" height="56" rx="8" fill="#e8eefc" stroke="#e3e8f0"/>
+              <text x="440" y="55" text-anchor="middle" fill="#173fa8">Scorecard</text>
+              <line x1="518" y1="50" x2="538" y2="50" stroke="#4e5a70" stroke-width="1.5" marker-end="url(#arrow)"/>
+              <rect x="538" y="22" width="156" height="56" rx="8" fill="#e8eefc" stroke="#e3e8f0"/>
+              <text x="616" y="48" text-anchor="middle" fill="#173fa8">Pricing</text>
+              <text x="616" y="64" text-anchor="middle" fill="#173fa8">tier</text>
+              <line x1="694" y1="50" x2="714" y2="50" stroke="#4e5a70" stroke-width="1.5" marker-end="url(#arrow)"/>
+              <rect x="714" y="22" width="156" height="56" rx="8" fill="#1e4fd0"/>
+              <text x="792" y="48" text-anchor="middle" fill="#ffffff">Decision</text>
+              <text x="792" y="64" text-anchor="middle" fill="#ffffff">&lt;10 sec</text>
+            </g>
+            <defs>
+              <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="#4e5a70"/>
+              </marker>
+            </defs>
+          </svg>
+          <figcaption>Every step, eligibility rules, scorecard weights, and pricing tiers, is config-driven and editable without a code deploy.</figcaption>
+        </figure>
       </div>
     </article>
 
@@ -177,6 +242,34 @@ footer .fine a { color: var(--accent); text-decoration: none; }
         <h3>An AI assistant that handled support end to end</h3>
         <p>I owned product strategy and requirements for Mira, a RAG-based borrower assistant: grounding and guardrail requirements, the knowledge base, evaluation metrics for containment and hallucination, and pre-launch red teaming of grounding failures.</p>
         <p class="result">Result: <b>98% containment</b>, with <b>47,311 users</b> served in 2025 without human intervention.</p>
+        <p class="scope"><b>Scope:</b> product strategy, grounding and guardrail requirements, knowledge base ownership, and evaluation metrics; engineering build owned by MPOWER's AI engineering team.</p>
+        <figure class="artifact">
+          <svg viewBox="0 0 880 100" role="img" aria-label="Flow diagram: Borrower question, intent and FAQ match, RAG knowledge lookup, then a grounded response">
+            <g font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="650">
+              <rect x="30" y="22" width="190" height="56" rx="8" fill="#e8eefc" stroke="#e3e8f0"/>
+              <text x="125" y="48" text-anchor="middle" fill="#173fa8">Borrower</text>
+              <text x="125" y="64" text-anchor="middle" fill="#173fa8">question</text>
+              <line x1="220" y1="50" x2="240" y2="50" stroke="#4e5a70" stroke-width="1.5" marker-end="url(#arrow2)"/>
+              <rect x="240" y="22" width="190" height="56" rx="8" fill="#e8eefc" stroke="#e3e8f0"/>
+              <text x="335" y="48" text-anchor="middle" fill="#173fa8">Intent + FAQ</text>
+              <text x="335" y="64" text-anchor="middle" fill="#173fa8">match</text>
+              <line x1="430" y1="50" x2="450" y2="50" stroke="#4e5a70" stroke-width="1.5" marker-end="url(#arrow2)"/>
+              <rect x="450" y="22" width="190" height="56" rx="8" fill="#e8eefc" stroke="#e3e8f0"/>
+              <text x="545" y="48" text-anchor="middle" fill="#173fa8">RAG knowledge</text>
+              <text x="545" y="64" text-anchor="middle" fill="#173fa8">lookup</text>
+              <line x1="640" y1="50" x2="660" y2="50" stroke="#4e5a70" stroke-width="1.5" marker-end="url(#arrow2)"/>
+              <rect x="660" y="22" width="190" height="56" rx="8" fill="#1e4fd0"/>
+              <text x="755" y="48" text-anchor="middle" fill="#ffffff">Grounded</text>
+              <text x="755" y="64" text-anchor="middle" fill="#ffffff">response</text>
+            </g>
+            <defs>
+              <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="#4e5a70"/>
+              </marker>
+            </defs>
+          </svg>
+          <figcaption>98% of conversations resolve at this path with no human handoff; the remainder escalate to a live agent.</figcaption>
+        </figure>
       </div>
     </article>
 
@@ -187,6 +280,7 @@ footer .fine a { color: var(--accent); text-decoration: none; }
         <h3>Cut bureau spend while extending coverage to 190+ countries</h3>
         <p>Analyzed $1.41M in annual credit bureau spend across 151K pulls, found 40% avoidable, and put a sign-off process in place. In parallel, extended credit data coverage from 18 to 190+ countries through customer-supplied credit data, starting with a 9-country pilot.</p>
         <p class="result">Result: <b>$275K per year</b> in credit pull cost reduction, roughly $350K per year in total data and vendor cost reductions.</p>
+        <p class="scope"><b>Scope:</b> led the bureau spend analysis and sign-off process; partnered with risk, compliance, and data engineering on the coverage expansion.</p>
       </div>
     </article>
 
@@ -197,6 +291,31 @@ footer .fine a { color: var(--accent); text-decoration: none; }
         <h3>Rebuilding the application funnel</h3>
         <p>Redesigned the loan application flow around progressive disclosure and smarter defaults, with instrumentation at every step.</p>
         <p class="result">Result: drop-off cut from <b>16% to 4%</b>, completion up from <b>70% to 82%</b>, conditional-offer rate up from <b>59% to 76%</b>.</p>
+        <p class="scope"><b>Scope:</b> owned the funnel redesign end to end, from instrumentation and experiment design to the shipped flow.</p>
+        <figure class="artifact">
+          <svg viewBox="0 0 880 190" role="img" aria-label="Before and after bar chart: drop-off 16 percent to 4 percent, completion 70 percent to 82 percent, conditional-offer rate 59 percent to 76 percent">
+            <g font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13">
+              <text x="10" y="24" fill="#1c2434" font-weight="650">Drop-off</text>
+              <rect x="190" y="10" width="96" height="16" rx="3" fill="#e3e8f0"/>
+              <text x="292" y="23" fill="#4e5a70">16%</text>
+              <rect x="190" y="32" width="24" height="16" rx="3" fill="#1e4fd0"/>
+              <text x="220" y="45" fill="#1c2434" font-weight="650">4%</text>
+
+              <text x="10" y="88" fill="#1c2434" font-weight="650">Completion</text>
+              <rect x="190" y="74" width="420" height="16" rx="3" fill="#e3e8f0"/>
+              <text x="616" y="87" fill="#4e5a70">70%</text>
+              <rect x="190" y="96" width="492" height="16" rx="3" fill="#1e4fd0"/>
+              <text x="688" y="109" fill="#ffffff" font-weight="650">82%</text>
+
+              <text x="10" y="152" fill="#1c2434" font-weight="650">Conditional offer</text>
+              <rect x="190" y="138" width="354" height="16" rx="3" fill="#e3e8f0"/>
+              <text x="550" y="151" fill="#4e5a70">59%</text>
+              <rect x="190" y="160" width="456" height="16" rx="3" fill="#1e4fd0"/>
+              <text x="652" y="173" fill="#ffffff" font-weight="650">76%</text>
+            </g>
+          </svg>
+          <figcaption>Light bars: before. Blue bars: after. All figures are share of applicants at that funnel stage.</figcaption>
+        </figure>
       </div>
     </article>
   </section>
@@ -222,7 +341,7 @@ footer .fine a { color: var(--accent); text-decoration: none; }
       <div class="build">
         <h3>Multi-agent document reviewer</h3>
         <p>Line-by-line PRD and spec review from multiple stakeholder personas, built on Claude.</p>
-        <a href="https://github.com/subhasishgoswami02">View on GitHub</a>
+        <span class="build-note">Private build, available on request</span>
       </div>
     </div>
   </section>
@@ -237,35 +356,51 @@ footer .fine a { color: var(--accent); text-decoration: none; }
   <section id="recommendations" aria-labelledby="recs-h">
     <div class="sec-head"><h2 id="recs-h">Recommendations</h2></div>
     <div class="recs" role="list" aria-label="LinkedIn recommendations">
-      <figure class="rec" role="listitem">
+      <figure class="rec rec-featured" role="listitem">
         <blockquote>
-          <p>"I still remember meeting Subhasish at our WeWork office six and a half years ago and being immediately impressed... What he does best is take the ambiguous, tangled problems nobody has framed yet and turn them into products teams can execute with clarity and confidence. He helped build and scale both our Business Analysis and Product functions while MPOWER grew from roughly $35M to $350M in annual originations, bringing configurability, automation, and a steadily better customer experience to the lending platform along the way. Few people grow with a company that completely; any company would be fortunate to have him leading product."</p>
+          <p>I still remember meeting Subhasish at our WeWork office six and a half years ago and being immediately impressed — a first impression he then proceeded to validate five promotions in a row, from entry-level Product Owner to Head of Product. What he does best is take the ambiguous, tangled problems nobody has framed yet and turn them into products teams can execute with clarity and confidence. He helped build and scale both our Business Analysis and Product functions while MPOWER grew from roughly $35M to $350M in annual originations, bringing configurability, automation, and a steadily better customer experience to the lending platform along the way. Few people grow with a company that completely; Subhasish did, and any company would be fortunate to have him leading product.</p>
         </blockquote>
         <figcaption>
-          <a href="https://www.linkedin.com/in/esmadja/">Emmanuel Smadja</a>
-          <span>CEO &amp; Co-founder, MPOWER Financing. Did not manage Subhasish directly.</span>
+          <div class="rec-avatar" aria-hidden="true">ES</div>
+          <div class="rec-meta">
+            <a href="https://www.linkedin.com/in/esmadja/">Emmanuel Smadja</a>
+            <span class="rec-role">CEO &amp; Co-founder, MPOWER Financing</span>
+            <span class="rec-meta-line">Senior leader, did not manage Subhasish directly · July 16, 2026</span>
+          </div>
         </figcaption>
       </figure>
 
-      <figure class="rec" role="listitem">
-        <blockquote>
-          <p>"Subhasish is incredibly level-headed and has an unmatched knack for cross-functional collaboration and stakeholder management. When it comes to building out requirements, he always asks the exact right, detailed questions. He takes true product ownership, knows the product inside and out, and is constantly finding ways to improve it. Whenever we hit a roadblock, his calm, structured problem-solving approach makes troubleshooting a breeze. Subhasish is a massive asset to any team he's on, and I really can't recommend him highly enough."</p>
-        </blockquote>
-        <figcaption>
-          <a href="https://www.linkedin.com/in/feliciabudiman/">Felicia Budiman</a>
-          <span>Strategic Operations &amp; Program Delivery, ex-Google. Cross-functional partner at MPOWER.</span>
-        </figcaption>
-      </figure>
+      <div class="recs-row">
+        <figure class="rec" role="listitem">
+          <blockquote>
+            <p>I've had the absolute pleasure of working alongside Subhasish for nearly 7 years, watching him excel and grow into an incredible Senior Product Manager. We've tackled numerous technology and product rollouts together, and through it all, he has consistently been the absolute go-to person in the company for bridging the gap between engineering, business, and product teams.</p>
+            <p>Subhasish is incredibly level-headed and has an unmatched knack for cross-functional collaboration and stakeholder management. When it comes to building out requirements, he always asks the exact right, detailed questions. He takes true product ownership, he knows the product inside and out, and is constantly finding ways to improve it. Whenever we hit a roadblock, his calm, structured problem-solving approach makes troubleshooting a breeze.</p>
+            <p>He is fantastic with follow-up and keeps everyone aligned, always keeping his eye on driving business outcomes and pushing our company goals forward. Subhasish is a massive asset to any team he's on, and I really can't recommend him highly enough!</p>
+          </blockquote>
+          <figcaption>
+            <div class="rec-avatar" aria-hidden="true">FB</div>
+            <div class="rec-meta">
+              <a href="https://www.linkedin.com/in/feliciabudiman/">Felicia Budiman</a>
+              <span class="rec-role">Strategic Operations &amp; Program Delivery, MPOWER Financing</span>
+              <span class="rec-meta-line">Worked with Subhasish on different teams · July 16, 2026</span>
+            </div>
+          </figcaption>
+        </figure>
 
-      <figure class="rec" role="listitem">
-        <blockquote>
-          <p>"Subhasish always ensured the engineering team had the requirements they needed and followed up with business stakeholders when required, was very articulate with his requirements gathering, and always stepped up to take ownership of tasks and followed them through to the end. It has been an absolute pleasure working with Subhasish, and I would highly recommend him for product roles."</p>
-        </blockquote>
-        <figcaption>
-          <a href="https://www.linkedin.com/in/kylie-mckiernan-7857253a/">Kylie McKiernan</a>
-          <span>Product Management, PropTech. Worked with Subhasish on a cross-company project, 2019.</span>
-        </figcaption>
-      </figure>
+        <figure class="rec" role="listitem">
+          <blockquote>
+            <p>I have worked with Subhasish from May 2019 to December 2019 on one of our priority projects and found him to be extremely reliable. Subhasish always ensured the engineering team had the requirements they needed and followed up our business stakeholders when required, very articulate with his requirements gathering, always stepped up to take ownership of tasks and followed through to the end. It has been an absolute please working with Subhasish and would highly recommend him for product roles.</p>
+          </blockquote>
+          <figcaption>
+            <div class="rec-avatar" aria-hidden="true">KM</div>
+            <div class="rec-meta">
+              <a href="https://www.linkedin.com/in/kylie-mckiernan-7857253a/">Kylie McKiernan</a>
+              <span class="rec-role">Product Management, ValuePRO Software (PropTech)</span>
+              <span class="rec-meta-line">Worked with Subhasish at a different company · December 12, 2019</span>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 </div>
