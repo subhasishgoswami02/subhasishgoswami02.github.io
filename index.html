@@ -74,6 +74,14 @@ h1 { font-size: 42px; line-height: 1.12; letter-spacing: -0.8px; color: var(--in
 .btn.solid:hover { background: var(--accent-dark); }
 .btn.outline { border-color: var(--line); color: var(--ink); background: var(--panel); }
 .btn.outline:hover { border-color: var(--accent); color: var(--accent); }
+.contact-copy { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.copy-row { display: inline-flex; align-items: center; gap: 8px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px; font-size: 13.5px; color: var(--body); cursor: pointer; font-family: inherit; }
+.copy-row:hover { border-color: var(--accent); }
+.copy-row .copy-icon { font-size: 13px; color: var(--accent); font-weight: 700; }
+.copy-row .copy-action { color: var(--muted); font-size: 12px; font-weight: 650; }
+.copy-row.copied .copy-action { color: #2f9e5c; }
+.text-link { font-size: 13.5px; font-weight: 650; color: var(--accent); text-decoration: none; }
+.text-link:hover { text-decoration: underline; }
 .portrait { justify-self: end; }
 .portrait img { width: 224px; height: 224px; border-radius: 50%; object-fit: cover; border: 5px solid #fff; box-shadow: 0 12px 32px rgba(30,79,208,0.18); display: block; }
 .monogram { width: 224px; height: 224px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, #6d8ff0 100%); color: #fff; font-size: 72px; font-weight: 800; align-items: center; justify-content: center; border: 5px solid #fff; box-shadow: 0 12px 32px rgba(30,79,208,0.18); letter-spacing: 1px; }
@@ -122,10 +130,16 @@ h2 { font-size: 22px; color: var(--ink); letter-spacing: -0.3px; white-space: no
 .rec-featured blockquote { font-size: 16px; }
 .rec figcaption { display: flex; align-items: flex-start; gap: 12px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); }
 .rec-avatar { flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, #6d8ff0 100%); color: #fff; font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; letter-spacing: 0.3px; }
-.rec-meta a { color: var(--ink); font-weight: 700; font-size: 14.5px; text-decoration: none; }
-.rec-meta a:hover { color: var(--accent); }
+.rec-name { display: block; color: var(--ink); font-weight: 700; font-size: 14.5px; }
 .rec-meta .rec-role { display: block; color: var(--accent-dark); font-size: 12.5px; font-weight: 650; margin-top: 2px; }
 .rec-meta .rec-meta-line { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+.rec-link { color: var(--accent); font-weight: 650; text-decoration: none; }
+.rec-link:hover { text-decoration: underline; }
+.rec-quote { position: relative; }
+.rec-clamped .rec-quote { max-height: 210px; overflow: hidden; }
+.rec-clamped .rec-quote::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 56px; background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #fff 90%); }
+.rec-toggle { align-self: flex-start; background: none; border: none; color: var(--accent); font-weight: 650; font-size: 13.5px; cursor: pointer; padding: 2px 0; font-family: inherit; }
+.rec-toggle:hover { text-decoration: underline; }
 footer { padding: 44px 0 60px; color: var(--muted); font-size: 14.5px; }
 footer .card { background: var(--ink); color: #dfe5ef; border-radius: 16px; padding: 34px; text-align: center; }
 footer .card h2 { color: #fff; margin-bottom: 8px; }
@@ -158,7 +172,7 @@ footer .fine a { color: var(--accent); text-decoration: none; }
       <a href="#builds">Builds</a>
       <a href="#about">About</a>
       <a href="#recommendations">Recommendations</a>
-      <a class="cta" href="Subhasish_Goswami_Resume.pdf">Resume (PDF)</a>
+      <a class="cta" href="Subhasish_Goswami_Resume.pdf" target="_blank" rel="noopener noreferrer">View resume ↗</a>
     </nav>
   </div>
 </header>
@@ -169,12 +183,23 @@ footer .fine a { color: var(--accent); text-decoration: none; }
     <div>
       <p class="kicker">Senior Manager, Product</p>
       <h1>Subhasish Goswami</h1>
-      <p class="lede">I build lending and AI products. Over 6.5 years at MPOWER Financing I helped scale cross-border student lending from roughly $35M to roughly <strong>$350M in annual originations</strong>, moved credit decisioning from a 48-hour manual queue to <strong>under 10 seconds</strong>, and shipped an AI assistant that served <strong>47,311 users</strong> in 2025.</p>
+      <p class="lede">I build lending and AI products: scaling international student lending, rebuilding credit decisioning around configurable rules, and shipping production GenAI at MPOWER Financing.</p>
       <div class="links">
-        <a class="btn solid" href="mailto:subhasishgoswami02@gmail.com">Email me</a>
-        <a class="btn outline" href="https://www.linkedin.com/in/subhasishgoswami/">LinkedIn</a>
-        <a class="btn outline" href="https://github.com/subhasishgoswami02">GitHub</a>
-        <a class="btn outline" href="https://decision-studio-one.vercel.app">Try my live demo</a>
+        <a class="btn solid" href="https://decision-studio-one.vercel.app" target="_blank" rel="noopener noreferrer">Try the live demo →</a>
+      </div>
+      <div class="contact-copy" role="group" aria-label="Contact details">
+        <button class="copy-row" type="button" data-copy="subhasishgoswami02@gmail.com" aria-label="Copy email address to clipboard">
+          <span class="copy-icon" aria-hidden="true">✉</span>
+          <span class="copy-text">subhasishgoswami02@gmail.com</span>
+          <span class="copy-action" aria-hidden="true">Copy</span>
+        </button>
+        <button class="copy-row" type="button" data-copy="https://www.linkedin.com/in/subhasishgoswami/" aria-label="Copy LinkedIn URL to clipboard">
+          <span class="copy-icon" aria-hidden="true">in</span>
+          <span class="copy-text">linkedin.com/in/subhasishgoswami</span>
+          <span class="copy-action" aria-hidden="true">Copy</span>
+        </button>
+        <a class="text-link" href="https://www.linkedin.com/in/subhasishgoswami/" target="_blank" rel="noopener noreferrer">Open LinkedIn ↗</a>
+        <a class="text-link" href="https://github.com/subhasishgoswami02" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       </div>
     </div>
     <div class="portrait">
@@ -201,7 +226,7 @@ footer .fine a { color: var(--accent); text-decoration: none; }
         <span class="tag">Credit decisioning</span>
         <h3>From a 48-hour queue to a sub-10-second decision</h3>
         <p>Loan decisions ran through a manual underwriting queue. I led the move to an automated decisioning platform built on configurable primitives: eligibility rules, pricing tiers, partner routing, and rollback, each adjustable without a code change.</p>
-        <p class="result">Result: decisions in <b>under 10 seconds</b>, <b>3x throughput</b> with no added headcount. I rebuilt the core mechanics as a public demo: <a href="https://decision-studio-one.vercel.app">Decision Studio</a>.</p>
+        <p class="result">Result: decisions in <b>under 10 seconds</b>, <b>3x throughput</b> with no added headcount. I rebuilt the core mechanics as a public demo: <a href="https://decision-studio-one.vercel.app" target="_blank" rel="noopener noreferrer">Decision Studio ↗</a>.</p>
         <p class="scope"><b>Scope:</b> product owner for the decisioning platform, requirements and config logic; execution by MPOWER's in-house engineering team.</p>
         <figure class="artifact">
           <svg viewBox="0 0 880 100" role="img" aria-label="Flow diagram: Application, eligibility rules, scorecard, pricing tier, then a decision in under 10 seconds">
@@ -241,7 +266,7 @@ footer .fine a { color: var(--accent); text-decoration: none; }
         <span class="tag">AI product</span>
         <h3>An AI assistant that handled support end to end</h3>
         <p>I owned product strategy and requirements for Mira, a RAG-based borrower assistant: grounding and guardrail requirements, the knowledge base, evaluation metrics for containment and hallucination, and pre-launch red teaming of grounding failures.</p>
-        <p class="result">Result: <b>98% containment</b>, with <b>47,311 users</b> served in 2025 without human intervention.</p>
+        <p class="result">Result: <b>47,311 users</b> served in 2025, <b>98%</b> resolved without a human handoff.</p>
         <p class="scope"><b>Scope:</b> product strategy, grounding and guardrail requirements, knowledge base ownership, and evaluation metrics; engineering build owned by MPOWER's AI engineering team.</p>
         <figure class="artifact">
           <svg viewBox="0 0 880 100" role="img" aria-label="Flow diagram: Borrower question, intent and FAQ match, RAG knowledge lookup, then a grounded response">
@@ -326,17 +351,17 @@ footer .fine a { color: var(--accent); text-decoration: none; }
       <div class="build">
         <h3><span class="live-dot" aria-hidden="true"></span>Decision Studio</h3>
         <p>A working loan decisioning engine with a rules console, pricing tiers, and a full decision trace. Next.js, deployed on Vercel.</p>
-        <a href="https://decision-studio-one.vercel.app">Try the live demo</a>
+        <a href="https://decision-studio-one.vercel.app" target="_blank" rel="noopener noreferrer">Try the live demo ↗</a>
       </div>
       <div class="build">
         <h3>CareerOS</h3>
         <p>A personal job search operating system: resume variants, evidence-checked claims, and automated QA pipelines.</p>
-        <a href="https://github.com/subhasishgoswami02/careeros">View on GitHub</a>
+        <a href="https://github.com/subhasishgoswami02/careeros" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
       </div>
       <div class="build">
         <h3>RAG evaluation harness</h3>
         <p>A test harness for grounded AI answers: containment, resolution accuracy, and hallucination checks.</p>
-        <a href="https://github.com/subhasishgoswami02/rag-eval-harness">View on GitHub</a>
+        <a href="https://github.com/subhasishgoswami02/rag-eval-harness" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
       </div>
       <div class="build">
         <h3>Multi-agent document reviewer</h3>
@@ -349,7 +374,7 @@ footer .fine a { color: var(--accent); text-decoration: none; }
   <section id="about" aria-labelledby="about-h">
     <div class="sec-head"><h2 id="about-h">About me</h2></div>
     <div class="about">
-      <p><strong>Based in Bengaluru.</strong> 14 years across product, lending, and analytics: MPOWER Financing since 2019 (employee #20 in India, four promotions), earlier TietoEVRY, Cognizant, and Wipro. MBA from Great Lakes Institute of Management. Evenings usually find me building with AI: the tools on this page started as weekend prototypes. I like products where a config change beats a code deploy, and metrics you can defend in a reference check.</p>
+      <p><strong>Based in Bengaluru.</strong> 14 years across product, lending, and analytics: MPOWER Financing since December 2019, roughly 6.5 years (employee #20 in India, four promotions), earlier TietoEVRY, Cognizant, and Wipro. MBA from Great Lakes Institute of Management. Evenings usually find me building with AI: the tools on this page started as weekend prototypes. I like products where a config change beats a code deploy, and metrics you can defend in a reference check.</p>
     </div>
   </section>
 
@@ -357,46 +382,52 @@ footer .fine a { color: var(--accent); text-decoration: none; }
     <div class="sec-head"><h2 id="recs-h">Recommendations</h2></div>
     <div class="recs" role="list" aria-label="LinkedIn recommendations">
       <figure class="rec rec-featured" role="listitem">
+        <div class="rec-quote">
         <blockquote>
           <p>I still remember meeting Subhasish at our WeWork office six and a half years ago and being immediately impressed — a first impression he then proceeded to validate five promotions in a row, from entry-level Product Owner to Head of Product. What he does best is take the ambiguous, tangled problems nobody has framed yet and turn them into products teams can execute with clarity and confidence. He helped build and scale both our Business Analysis and Product functions while MPOWER grew from roughly $35M to $350M in annual originations, bringing configurability, automation, and a steadily better customer experience to the lending platform along the way. Few people grow with a company that completely; Subhasish did, and any company would be fortunate to have him leading product.</p>
         </blockquote>
+        </div>
         <figcaption>
           <div class="rec-avatar" aria-hidden="true">ES</div>
           <div class="rec-meta">
-            <a href="https://www.linkedin.com/in/esmadja/">Emmanuel Smadja</a>
+            <span class="rec-name">Emmanuel Smadja</span>
             <span class="rec-role">CEO &amp; Co-founder, MPOWER Financing</span>
-            <span class="rec-meta-line">Senior leader, did not manage Subhasish directly · July 16, 2026</span>
+            <span class="rec-meta-line">Senior leader, did not manage Subhasish directly · July 16, 2026 · <a class="rec-link" href="https://www.linkedin.com/in/esmadja/" target="_blank" rel="noopener noreferrer">View on LinkedIn ↗</a></span>
           </div>
         </figcaption>
       </figure>
 
       <div class="recs-row">
         <figure class="rec" role="listitem">
+          <div class="rec-quote">
           <blockquote>
             <p>I've had the absolute pleasure of working alongside Subhasish for nearly 7 years, watching him excel and grow into an incredible Senior Product Manager. We've tackled numerous technology and product rollouts together, and through it all, he has consistently been the absolute go-to person in the company for bridging the gap between engineering, business, and product teams.</p>
             <p>Subhasish is incredibly level-headed and has an unmatched knack for cross-functional collaboration and stakeholder management. When it comes to building out requirements, he always asks the exact right, detailed questions. He takes true product ownership, he knows the product inside and out, and is constantly finding ways to improve it. Whenever we hit a roadblock, his calm, structured problem-solving approach makes troubleshooting a breeze.</p>
             <p>He is fantastic with follow-up and keeps everyone aligned, always keeping his eye on driving business outcomes and pushing our company goals forward. Subhasish is a massive asset to any team he's on, and I really can't recommend him highly enough!</p>
           </blockquote>
+          </div>
           <figcaption>
             <div class="rec-avatar" aria-hidden="true">FB</div>
             <div class="rec-meta">
-              <a href="https://www.linkedin.com/in/feliciabudiman/">Felicia Budiman</a>
+              <span class="rec-name">Felicia Budiman</span>
               <span class="rec-role">Strategic Operations &amp; Program Delivery, MPOWER Financing</span>
-              <span class="rec-meta-line">Worked with Subhasish on different teams · July 16, 2026</span>
+              <span class="rec-meta-line">Worked with Subhasish on different teams · July 16, 2026 · <a class="rec-link" href="https://www.linkedin.com/in/feliciabudiman/" target="_blank" rel="noopener noreferrer">View on LinkedIn ↗</a></span>
             </div>
           </figcaption>
         </figure>
 
         <figure class="rec" role="listitem">
+          <div class="rec-quote">
           <blockquote>
             <p>I have worked with Subhasish from May 2019 to December 2019 on one of our priority projects and found him to be extremely reliable. Subhasish always ensured the engineering team had the requirements they needed and followed up our business stakeholders when required, very articulate with his requirements gathering, always stepped up to take ownership of tasks and followed through to the end. It has been an absolute please working with Subhasish and would highly recommend him for product roles.</p>
           </blockquote>
+          </div>
           <figcaption>
             <div class="rec-avatar" aria-hidden="true">KM</div>
             <div class="rec-meta">
-              <a href="https://www.linkedin.com/in/kylie-mckiernan-7857253a/">Kylie McKiernan</a>
+              <span class="rec-name">Kylie McKiernan</span>
               <span class="rec-role">Product Management, ValuePRO Software (PropTech)</span>
-              <span class="rec-meta-line">Worked with Subhasish at a different company · December 12, 2019</span>
+              <span class="rec-meta-line">Worked with Subhasish at a different company · December 12, 2019 · <a class="rec-link" href="https://www.linkedin.com/in/kylie-mckiernan-7857253a/" target="_blank" rel="noopener noreferrer">View on LinkedIn ↗</a></span>
             </div>
           </figcaption>
         </figure>
@@ -412,9 +443,65 @@ footer .fine a { color: var(--accent); text-decoration: none; }
       <p>I am open to Senior PM, Lead PM, Group PM, and product leadership conversations.</p>
       <a class="btn solid" href="mailto:subhasishgoswami02@gmail.com">Email me</a>
     </div>
-    <p class="fine"><a href="mailto:subhasishgoswami02@gmail.com">subhasishgoswami02@gmail.com</a> · <a href="https://www.linkedin.com/in/subhasishgoswami/">LinkedIn</a> · <a href="https://github.com/subhasishgoswami02">GitHub</a></p>
+    <p class="fine"><a href="mailto:subhasishgoswami02@gmail.com">subhasishgoswami02@gmail.com</a> · <a href="https://www.linkedin.com/in/subhasishgoswami/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a> · <a href="https://github.com/subhasishgoswami02" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p>
   </div>
 </footer>
 </main>
+<script>
+(function () {
+  // Copy-to-clipboard for email / LinkedIn URL chips
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    var actionEl = btn.querySelector('.copy-action');
+    var iconEl = btn.querySelector('.copy-icon');
+    var defaultAction = actionEl ? actionEl.textContent : 'Copy';
+    var defaultIcon = iconEl ? iconEl.textContent : '';
+    btn.addEventListener('click', function () {
+      var value = btn.getAttribute('data-copy');
+      var done = function () {
+        btn.classList.add('copied');
+        if (actionEl) actionEl.textContent = 'Copied';
+        if (iconEl) iconEl.textContent = '✓';
+        setTimeout(function () {
+          btn.classList.remove('copied');
+          if (actionEl) actionEl.textContent = defaultAction;
+          if (iconEl) iconEl.textContent = defaultIcon;
+        }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(done, done);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = value;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        done();
+      }
+    });
+  });
+
+  // Collapse long recommendations behind "Show more"
+  document.querySelectorAll('.rec').forEach(function (rec) {
+    var quote = rec.querySelector('.rec-quote');
+    if (!quote) return;
+    if (quote.scrollHeight <= 240) return;
+    rec.classList.add('rec-clamped');
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'rec-toggle';
+    btn.textContent = 'Show more';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.addEventListener('click', function () {
+      var isClamped = rec.classList.toggle('rec-clamped');
+      btn.textContent = isClamped ? 'Show more' : 'Show less';
+      btn.setAttribute('aria-expanded', String(!isClamped));
+    });
+    quote.after(btn);
+  });
+})();
+</script>
 </body>
 </html>
