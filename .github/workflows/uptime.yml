@@ -1,0 +1,39 @@
+name: Site uptime
+
+# Checks subhasishgoswami.com every 30 minutes and the assistant once a day.
+# A failed run emails the repo owner (GitHub's default notification for failed scheduled runs).
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # homepage and 404 page
+    - cron: "15 3 * * *"     # 08:45 IST daily: also one live assistant question
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Homepage loads and shows the assistant
+        run: |
+          code=$(curl -s -o page.html -w '%{http_code}' --max-time 30 https://subhasishgoswami.com/)
+          echo "homepage status: $code"
+          test "$code" = "200"
+          grep -q "Ask about" page.html
+
+      - name: Not-found page works
+        run: |
+          code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 https://subhasishgoswami.com/uptime-check-missing-page)
+          echo "404 check status: $code"
+          test "$code" = "404"
+
+      - name: Assistant answers (daily and on manual runs)
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 3 * * *'
+        run: |
+          out=$(curl -sN --max-time 60 -X POST https://subhasishgoswami.com/api/public/ask \
+            -H 'Content-Type: application/json' \
+            -d '{"question":"Where did he do his MBA?","history":[]}')
+          echo "$out"
+          echo "$out" | grep -q "Great Lakes"
